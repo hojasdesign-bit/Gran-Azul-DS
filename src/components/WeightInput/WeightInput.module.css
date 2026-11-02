@@ -1,0 +1,6 @@
+.root { font-family: var(--ga-font-sans); color: var(--ga-ink); display: grid; gap: var(--ga-space-2); }
+.label { font-size: var(--ga-text-body-sm); font-weight: 600; color: var(--ga-muted); }
+.row { display: flex; align-items: center; gap: var(--ga-space-2); background: var(--ga-input-bg); border: 1px solid var(--ga-border); border-radius: var(--ga-radius-lg); padding: 4px; }
+.btn { width: 40px; height: 40px; border: 0; border-radius: 10px; background: var(--ga-accent-soft); color: var(--ga-brand); font-size: 20px; font-weight: 700; cursor: pointer; }
+.input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--ga-ink); font-size: var(--ga-text-body); font-weight: 700; text-align: center; outline: none; }
+.unit { color: var(--ga-muted); font-weight: 600; }

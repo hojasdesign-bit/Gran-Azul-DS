@@ -1,0 +1,27 @@
+{
+  "name": "gran-azul-ds",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Gran Azul DS · Sistema de diseño para envíos, compras, trámites y viajes a Cuba (React + Storybook, no es un proyecto crypto)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-docs": "^10.6.2",
+    "@storybook/addon-themes": "^10.6.2",
+    "@storybook/react-vite": "^10.6.2",
+    "@vitejs/plugin-react": "^6.1.2",
+    "storybook": "^10.6.2",
+    "vite": "^8.3.4"
+  }
+}

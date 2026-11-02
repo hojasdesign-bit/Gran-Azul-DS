@@ -1,0 +1,44 @@
+/* Medidas portadas desde peetoo (v2.4, fila de filtros igualada al
+   CascadeField): alto total 50px y radio 16px, con los botones
+   internos a 42px y radio 12px. Antes era 46px/píldora y peetoo lo
+   corregía con overrides en su propio CSS; ahora es el default del DS. */
+.root {
+  display: inline-flex;
+  gap: 4px;
+  width: 100%;
+  padding: 4px;
+  background: var(--ga-surface-raised);
+  border-radius: var(--ga-radius-lg);
+  font-family: var(--ga-font-sans);
+  box-sizing: border-box;
+}
+
+.seg {
+  flex: 1;
+  height: 42px;
+  padding: 0 var(--ga-space-4);
+  background: transparent;
+  border: 0;
+  border-radius: var(--ga-radius-tile);
+  color: var(--ga-muted);
+  font-family: var(--ga-font-sans);
+  font-size: var(--ga-text-body);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.seg:hover { color: var(--ga-ink); }
+.seg:focus-visible { outline: none; box-shadow: var(--ga-focus-ring); }
+
+.active {
+  background: var(--ga-surface-overlay);
+  color: var(--ga-ink);
+  box-shadow: var(--ga-shadow-sm);
+}
+
+.activeAccent {
+  background: var(--ga-accent);
+  color: #ffffff;
+}
