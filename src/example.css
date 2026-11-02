@@ -1,0 +1,104 @@
+.ga-example {
+  min-height: 100vh;
+  background: var(--ga-bg);
+  color: var(--ga-ink);
+  font-family: var(--ga-font-sans);
+}
+.ga-example-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 20px 64px;
+  background: var(--ga-bg);
+}
+.ga-example-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ga-ink);
+  text-decoration: none;
+}
+.ga-example-nav {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+}
+.ga-example-nav a {
+  color: var(--ga-muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+.ga-example-header-actions {
+  display: flex;
+  gap: 12px;
+}
+.ga-example-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ga-cyan);
+}
+.ga-example-hero-text {
+  font-size: 18px;
+  color: var(--ga-muted);
+  max-width: 560px;
+  margin: 0 auto;
+}
+.ga-example-hero-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.ga-example-trust {
+  margin-top: 28px;
+  font-size: 14px;
+  color: var(--ga-muted);
+}
+.ga-example-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+.ga-example-track-form {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  max-width: 640px;
+  margin: 24px auto 0;
+}
+.ga-example-track-form > :first-child { flex: 1; }
+.ga-example-track-result {
+  max-width: 640px;
+  margin: 32px auto 0;
+  display: grid;
+  gap: 24px;
+}
+.ga-example-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+.ga-example-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.ga-example-offices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 24px;
+}
+@media (max-width: 900px) {
+  .ga-example-header { flex-wrap: wrap; padding: 16px 24px; }
+  .ga-example-nav { display: none; }
+  .ga-example-grid, .ga-example-two-col { grid-template-columns: 1fr; }
+  .ga-example-track-form { flex-direction: column; align-items: stretch; }
+}
