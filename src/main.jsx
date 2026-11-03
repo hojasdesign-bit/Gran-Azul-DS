@@ -41,7 +41,7 @@ function ExamplePage() {
     <div data-theme={theme} className="ga-example">
       <header className="ga-example-header">
         <a className="ga-example-brand" href="#">
-          <img src="/logo.svg" alt="Gran Azul" width="36" height="36" />
+          <img src="/logo/gran-azul-completo.svg" alt="Gran Azul" width="120" height="37" />
           <span>Gran Azul</span>
         </a>
         <nav className="ga-example-nav" aria-label="Principal">

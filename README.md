@@ -27,6 +27,14 @@ npm run build-storybook
 ```
 
 El logo de marca está en `public/logo.svg` (archivo enviado por el usuario en este proyecto).
+Versiones derivadas de ese archivo, en `public/logo/`:
+- Completo (símbolo + «Gran Azul» + lema): `gran-azul-completo.svg`
+- Isotipo solo (símbolo, 3 trazados): `gran-azul-isotipo.svg`
+- Logotipo solo (solo el texto «Gran Azul», 8 trazados): `gran-azul-logotipo.svg`
+- Cada una en monocromo noche `#071D2F`, blanco `#FFFFFF`, azul `#0075A7` y cian `#13C1DF`
+  (`gran-azul-<versión>-mono-<noche|blanco|azul|cian>.svg`).
+- Favicon: `public/favicon.svg`, isotipo blanco sobre cuadrado azul `#0075A7` redondeado,
+  referenciado en `index.html` (antes el favicon era el logo completo, demasiado ancho para una pestaña).
 
 ## Contenido demo
 
