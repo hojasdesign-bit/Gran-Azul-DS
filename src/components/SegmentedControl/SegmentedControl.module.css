@@ -1,14 +1,13 @@
 /* Medidas portadas desde peetoo (v2.4, fila de filtros igualada al
-   CascadeField): alto total 50px y radio 16px, con los botones
-   internos a 42px y radio 12px. Antes era 46px/píldora y peetoo lo
-   corregía con overrides en su propio CSS; ahora es el default del DS. */
+   CascadeField): botones a 42px y radio 12px.
+   Patrón de toggle del DS (igual que el orden de QuoteOptions): sin
+   píldora ni fondo compartido. El activo es un botón sólido; el inactivo
+   es un texto con borde outline y fondo transparente. Ambos llevan
+   borde de 1px para no cambiar de tamaño al alternar. */
 .root {
   display: inline-flex;
-  gap: 4px;
+  gap: 8px;
   width: 100%;
-  padding: 4px;
-  background: var(--ga-surface-raised);
-  border-radius: var(--ga-radius-lg);
   font-family: var(--ga-font-sans);
   box-sizing: border-box;
 }
@@ -18,27 +17,30 @@
   height: 42px;
   padding: 0 var(--ga-space-4);
   background: transparent;
-  border: 0;
+  border: 1px solid var(--ga-border-strong);
   border-radius: var(--ga-radius-tile);
-  color: var(--ga-muted);
+  color: var(--ga-ink);
   font-family: var(--ga-font-sans);
   font-size: var(--ga-text-body);
   font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
-.seg:hover { color: var(--ga-ink); }
+.seg:hover { border-color: var(--ga-accent); color: var(--ga-accent); }
 .seg:focus-visible { outline: none; box-shadow: var(--ga-focus-ring); }
 
 .active {
-  background: var(--ga-surface-overlay);
-  color: var(--ga-ink);
-  box-shadow: var(--ga-shadow-sm);
+  background: var(--ga-accent);
+  border-color: var(--ga-accent);
+  color: var(--ga-on-accent);
 }
+
+.active:hover { color: var(--ga-on-accent); }
 
 .activeAccent {
   background: var(--ga-accent);
-  color: #ffffff;
+  border-color: var(--ga-accent);
+  color: var(--ga-on-accent);
 }
