@@ -43,7 +43,7 @@
 }
 .ga-example-hero-text {
   font-size: 18px;
-  color: var(--ga-muted);
+  color: #CFE2EE;
   max-width: 560px;
   margin: 0 auto;
 }
@@ -57,7 +57,7 @@
 .ga-example-trust {
   margin-top: 28px;
   font-size: 14px;
-  color: var(--ga-muted);
+  color: #CFE2EE;
 }
 .ga-example-section {
   max-width: 1200px;
@@ -96,9 +96,22 @@
   gap: 12px;
   margin-top: 24px;
 }
+/* Los hijos de una rejilla no pueden encogerse por debajo de su contenido
+   salvo que se les ponga min-width: 0; sin esto, en móvil empujan la página. */
+.ga-example-grid > *,
+.ga-example-two-col > *,
+.ga-example-offices > * {
+  min-width: 0;
+}
+
 @media (max-width: 900px) {
   .ga-example-header { flex-wrap: wrap; padding: 16px 24px; }
   .ga-example-nav { display: none; }
   .ga-example-grid, .ga-example-two-col { grid-template-columns: 1fr; }
   .ga-example-track-form { flex-direction: column; align-items: stretch; }
+}
+
+@media (max-width: 600px) {
+  .ga-example-offices { grid-template-columns: 1fr; }
+  .ga-example-header-actions { flex-wrap: wrap; }
 }

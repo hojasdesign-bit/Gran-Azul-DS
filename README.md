@@ -36,6 +36,35 @@ Versiones derivadas de ese archivo, en `public/logo/`:
 - Favicon: `public/favicon.svg`, isotipo blanco sobre cuadrado azul `#0075A7` redondeado,
   referenciado en `index.html` (antes el favicon era el logo completo, demasiado ancho para una pestaña).
 
+## Iconos
+
+Fuente única: [HugeIcons](https://hugeicons.com/icons), estilo **Stroke Rounded**
+(el set gratuito, `@hugeicons/core-free-icons`, rejilla 24×24).
+
+- **Estilo:** Stroke Rounded, siempre. No mezclar Sharp, Standard, Solid,
+  Duotone ni Bulk en el mismo conjunto. Solid solo como excepción para
+  un estado relleno (favorito activo, estrella), nunca como estilo general.
+- **Grosor:** `stroke-width="1.8"` en todos los iconos de interfaz, a
+  cualquier tamaño. Es el grosor mayoritario que ya usa el DS y el que
+  mejor se lee a 16-20 px sobre fondo claro y oscuro. (El valor por
+  defecto de HugeIcons es 1.5: al copiar un SVG hay que cambiarlo a 1.8.)
+- **Color y relleno:** `stroke="currentColor"`, `fill="none"`,
+  `stroke-linecap="round"`, `stroke-linejoin="round"`, para que el icono
+  herede el color del texto que lo acompaña.
+- **Tamaños de uso:** 16 px (botones y texto pequeño), 20 px (controles
+  y campos) y 24 px (navegación, tarjetas y cabeceras). Copiar el SVG en
+  línea en el proyecto, nunca enlazado en caliente.
+- **En código:** componente `Icon` (`src/components/Icon/`), con los
+  datos del paquete oficial gratuito `@hugeicons/core-free-icons`
+  (dependencia del proyecto) normalizados a 1.8 y `currentColor`.
+  La historia `Gran Azul/Icon` define la regla en Storybook con la
+  galería completa y los tres tamaños. Los componentes nuevos usan
+  `Icon` donde toca (búsqueda en TrackingSearch, estrella en
+  QuoteOptions, flecha en FeaturedDestinations).
+- **Excepciones vigentes:** unos pocos glifos usan grosores distintos
+  por legibilidad (cierres y checks a 2-2.2); al tocar esos componentes,
+  normalizarlos a 1.8 salvo que el glifo se pierda a ese grosor.
+
 ## Contenido demo
 
 Las historias usan solo hechos del home de Gran Azul: las 4 soluciones, más de 15 oficinas

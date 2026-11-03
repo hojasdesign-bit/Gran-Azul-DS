@@ -27,3 +27,23 @@
   align-items: center;
   gap: var(--ga-space-4);
 }
+
+/* El panel es oscuro en ambos temas: los títulos no pueden heredar el
+   color tinta global de base.css, y ningún botón dentro puede usar tinta
+   pensada para fondo claro. */
+.panel h1,
+.panel h2,
+.panel h3,
+.panel h4 {
+  color: inherit;
+}
+
+.panel button {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.panel button:hover:not(:disabled) {
+  color: #ffffff;
+  border-color: #ffffff;
+}
