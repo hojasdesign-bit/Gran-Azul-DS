@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './ShippingCalculator.module.css';
 import { cn } from '../../utils.js';
 import { WeightInput } from '../WeightInput/WeightInput.jsx';
+import { SegmentedControl } from '../SegmentedControl/SegmentedControl.jsx';
 
 const LB_POR_KG = 2.20462;
 
@@ -30,10 +31,15 @@ export function ShippingCalculator({ airRate = 3, seaRate = 2, className = '', .
         onUnitChange={cambiarUnidad}
         step={unidad === 'kg' ? 0.5 : 1}
       />
-      <div className={styles.methods} role="group" aria-label="Método de envío">
-        <button type="button" className={cn(styles.method, metodo === 'aereo' && styles.active)} onClick={() => setMetodo('aereo')}>Aéreo</button>
-        <button type="button" className={cn(styles.method, metodo === 'maritimo' && styles.active)} onClick={() => setMetodo('maritimo')}>Marítimo</button>
-      </div>
+      <SegmentedControl
+        options={[
+          { value: 'aereo', label: 'Aéreo' },
+          { value: 'maritimo', label: 'Marítimo' },
+        ]}
+        value={metodo}
+        onChange={setMetodo}
+        ariaLabel="Método de envío"
+      />
       <p className={styles.result}>
         Ejemplo demo: <strong>{totalTexto} USD</strong>
         {unidad === 'kg'
