@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './WeightInput.module.css';
 import { cn } from '../../utils.js';
+import { SegmentedControl } from '../SegmentedControl/SegmentedControl.jsx';
 
 /**
  * WeightInput — peso con botones −/+ y, al lado, un switch lb/kg.
@@ -35,19 +36,13 @@ export function WeightInput({
           <input className={styles.input} type="number" value={value} min={min} step={step} onChange={(e) => set(Number(e.target.value) || 0)} aria-label={label} />
           <button type="button" className={styles.btn} onClick={() => set((value || 0) + step)} aria-label="Añadir peso">+</button>
         </div>
-        <div className={styles.unitSwitch} role="group" aria-label="Unidad de peso">
-          {units.map((u) => (
-            <button
-              key={u}
-              type="button"
-              className={cn(styles.unitBtn, currentUnit === u && styles.unitActive)}
-              aria-pressed={currentUnit === u}
-              onClick={() => changeUnit(u)}
-            >
-              {u}
-            </button>
-          ))}
-        </div>
+        <SegmentedControl
+          options={units.map((u) => ({ value: u, label: u.toUpperCase() }))}
+          value={currentUnit}
+          onChange={changeUnit}
+          ariaLabel="Unidad de peso"
+          style={{ width: 'auto', flexShrink: 0 }}
+        />
       </div>
     </div>
   );
