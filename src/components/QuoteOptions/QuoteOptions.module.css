@@ -1,13 +1,13 @@
 .root { font-family: var(--ga-font-sans); color: var(--ga-ink); min-width: 0; }
 .sortBar { display: flex; align-items: center; justify-content: flex-end; gap: var(--ga-space-2); margin-bottom: var(--ga-space-3); flex-wrap: wrap; }
 .sortLabel { color: var(--ga-muted); font-size: var(--ga-text-body-sm); font-weight: 600; }
-/* Patrón de toggle del DS: sin píldora compartida. El activo es un botón
-   sólido; el inactivo es un texto con borde outline y fondo transparente.
-   Ambos llevan borde de 1px para no cambiar de tamaño al alternar. */
-.sortGroup { display: inline-flex; gap: 8px; }
-.sortBtn { border: 1px solid var(--ga-border-strong); border-radius: var(--ga-radius-lg); background: transparent; color: var(--ga-ink); padding: 8px 14px; font-size: var(--ga-text-body-sm); font-weight: 700; cursor: pointer; }
-.sortBtn:hover { border-color: var(--ga-accent); color: var(--ga-accent); }
-.sortActive { background: var(--ga-accent); border-color: var(--ga-accent); color: var(--ga-on-accent); }
+/* Patrón de toggle del DS (corregido): el outline agrupa las dos
+   opciones en un solo contenedor. El activo es un botón sólido; el
+   inactivo solo se ve como texto, sin borde ni fondo propio. */
+.sortGroup { display: inline-flex; gap: 4px; padding: 4px; border: 1px solid var(--ga-border-strong); border-radius: var(--ga-radius-lg); background: transparent; }
+.sortBtn { border: 0; border-radius: var(--ga-radius-tile); background: transparent; color: var(--ga-muted); padding: 8px 14px; font-size: var(--ga-text-body-sm); font-weight: 700; cursor: pointer; }
+.sortBtn:hover { color: var(--ga-ink); }
+.sortActive { background: var(--ga-accent); color: var(--ga-on-accent); }
 .sortActive:hover { color: var(--ga-on-accent); }
 .header { display: grid; grid-template-columns: 1.6fr 1fr 0.9fr 0.9fr 1.1fr 0.9fr 1fr auto; gap: var(--ga-space-3); padding: 0 var(--ga-space-6) var(--ga-space-2); color: var(--ga-muted); font-size: var(--ga-text-body-sm); font-weight: 600; }
 .list { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--ga-space-3); }
